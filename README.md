@@ -24,16 +24,4 @@ MavSentry/                  <- Root folder on your computer
 Before running the container for the first time, you need to download our pre-built image from Docker Hub. Open your Linux/WSL terminal, navigate into your project folder, and run these two commands:
 
 # 1. To run the locally installed docker container
-sudo docker run -it --net=host --privileged -v $(pwd):/workspace my_rover_image:latest
-
-# 2. Download the shared environment image from Docker Hub
-docker pull raaps25/rover_slam:v1
-
-# 3. Spin up the container environment using that image
-docker run -it --name active_slam --net=host --privileged -v $(pwd):/workspace raaps25/rover_slam:v1
-
-    docker pull: Downloads the complete, pre-configured workspace environment so you don't have to spend time compiling ROS 2 or SLAM dependencies on your machine.
-
-    docker run: Launches the container. It links the folder on your laptop directly to the environment sandbox (-v), connects your computer's network interface so we can view maps remotely (--net=host), and opens up access to attached hardware like USB controllers and serial cables (--privileged).
-
-If this doesnt work you can also just use the dockerfile to install your own container
+sudo docker run -it --net=host --privileged -v $(teamrover):/workspace my_rover_image:latest
