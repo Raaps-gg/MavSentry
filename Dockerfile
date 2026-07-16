@@ -1,7 +1,6 @@
 # Use an official ROS 2 image as the base. 
 # Desktop version includes development tools we will need.
-FROM osrf/ros:humble-desktop
-
+FROM ros:humble-ros-base
 # Set env variables to prevent interactive prompts during installation
 ENV DEBIAN_FRONTEND=noninteractive
 
