@@ -24,4 +24,4 @@ MavSentry/                  <- Root folder on your computer
 Before running the container for the first time, you need to download our pre-built image from Docker Hub. Open your Linux/WSL terminal, navigate into your project folder, and run these two commands:
 
 # 1. To run the locally installed docker container
-sudo docker run -it --net=host --privileged -v $(teamrover):/workspace my_rover_image:latest
+sudo docker run -it --net=host --privileged -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $(pwd):/workspace my_rover_image:latest
